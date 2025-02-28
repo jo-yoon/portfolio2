@@ -1,0 +1,801 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+body{
+
+}
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration: none;}
+/* button{border: none;background: none;cursor: pointer;} */
+.en{ font-family: "Cormorant", sans-serif;}
+.en2{font-family: "Inter", sans-serif;}
+/* header */
+
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    z-index: 3;
+}
+header h1 a span{
+    text-decoration: none;
+	font-weight: 100;
+	/* letter-spacing: -3px; */
+	animation: weight 2s infinite;
+	animation-delay: calc(var(--char-index) * 150ms);
+}
+@keyframes weight {
+	from {
+		font-weight: 100;
+	}
+
+	50% {
+		font-weight: 900;
+	}
+
+	to {
+		font-weight: 100;
+	}
+}
+header a{
+    color: #fff;
+}
+header ul{
+    display: flex;
+    gap: 81px;
+}
+header ul li a{
+    color: rgba(255,255,255,0.5);
+}
+header ul li:hover a{
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.nav_wrap{
+    display: flex;
+    gap: 81px;
+}
+/* 전체메뉴 영역 */
+.nav_wrap .nav{
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 0.5s ease-in-out;
+}
+body.on .nav_wrap .nav{
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+/* 전체메뉴 버튼 */
+.nav_icon{
+    width: 30px;
+    height: 25px;
+    /* background: yellow; */
+    cursor: pointer;
+}
+.nav_icon div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.nav_icon:hover span{
+    background: #fff;
+}
+.nav_icon div span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.5);
+    left: 0;
+}
+.nav_icon div span:nth-child(1){
+    top: 0;
+    transition: all 0.5s ease-in-out;
+}
+.nav_icon div span:nth-child(2){
+    top: 12.5px;
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+.nav_icon div span:nth-child(3){
+    top: 25px;
+    transition: all 0.5s ease-in-out;
+}
+body.on .nav_icon div span:nth-child(1){
+    transform: rotate(45deg);
+    top: 12.5px;
+    transition: all 0.5s ease-in-out;
+}
+body.on .nav_icon div span:nth-child(2){
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+body.on .nav_icon div span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 12.5px;
+    transition: all 0.5s ease-in-out;
+}
+.nav ul li a:hover span{
+    text-decoration: none;
+	font-weight: 100;
+	/* letter-spacing: -3px; */
+	animation: weight 2s infinite;
+	animation-delay: calc(var(--char-index) * 150ms);
+}
+@keyframes weight {
+	from {
+		font-weight: 100;
+	}
+
+	50% {
+		font-weight: 900;
+	}
+
+	to {
+		font-weight: 100;
+	}
+}
+
+/* section */
+section{
+    width: 100%;
+    height: 100vh;
+    background: #222 !important;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section h2{
+    /* 글자 모두 대문자로 바꾸기 */
+    text-transform: uppercase;
+    font-size: 100px;
+    text-align: center;
+}
+section h2 span{
+    display: block;
+    -webkit-text-stroke: 3px #f5a301;
+    color: transparent;
+}
+#sec01 h2 .imgbox{
+    display: block;
+    width: 1000px;
+    height: 500px;
+    background: url("../images/home.png") no-repeat;
+    background-size: 1000px 500px;
+}
+/* #sec01 h2 span,
+#sec01 h2 .span2{
+    text-decoration: none;
+	font-weight: 100;
+	letter-spacing: -3px;
+	animation: weight 2s infinite;
+	animation-delay: calc(var(--char-index) * 150ms);
+}
+@keyframes weight {
+	from {
+		font-weight: 100;
+	}
+
+	50% {
+		font-weight: 900;
+	}
+
+	to {
+		font-weight: 100;
+	}
+} */
+/* sec02 */
+#sec02 ul{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#sec02 ul li{
+    width: 30%;
+    height: 300px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 80px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 3px solid #f5a301;
+}
+#sec02 ul li h2{
+    font-size: 24px;
+    color: #333;
+}
+#sec02 ul li a{
+    display: block;
+    width: 600px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 70px;
+}
+#sec02 ul li a .imgbox{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+#sec02 ul li a .imgbox img{
+    width: 100%;
+}
+/* sec03 */
+#sec03{
+    position: relative;
+    align-items: flex-start;
+}
+#sec03 h2{
+    -webkit-text-stroke: 2px #f5a301;
+    color: transparent;
+}
+#sec03 span{
+    display: block;
+    width: 300px;
+    height: 300px;
+    background: #f5a301;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: #333;
+    border-radius: 8px;
+}
+#sec03 span.work1{
+    transform: translate(-50%,-50%) rotate(-15deg);
+}
+#sec03 span.work2{
+    transform: translate(-50%,-50%) rotate(15deg);
+    background: red;
+}
+#sec03 span.work3{
+    transform: translate(-50%,-50%) rotate(-20deg);
+    background: yellow;
+}
+#sec03 span.work4{
+    transform: translate(-50%,-50%) rotate(20deg);
+    background: green;
+}
+#sec03 span.work5{
+    transform: translate(-50%,-50%) rotate(-25deg);
+    background: blue;
+}
+#sec03 span.work6{
+    transform: translate(-50%,-50%) rotate(-5deg);
+    background: purple;
+}
+/* sec05 */
+#sec05{
+    position: relative;
+    height: 1300px;
+    background: #fff;
+    overflow: hidden;
+}
+#sec05 span.circle{
+    display: block;
+    width: 3000px;
+    height: 3000px;
+    border-radius: 100%;
+    background: #333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+}
+#sec05 .txtbox{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#sec05 .txtbox p{
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: -5px;
+}
+
+/* #profile .txt_wrap, */
+#profile{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+}
+#profile span{
+    color: #f5a301;
+}
+#profile .inner{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#profile .inner .txt_wrap p,
+#profile .inner .txt_wrap h3,
+#profile .inner .scroll{
+    opacity: 0;
+}
+#profile .inner .info{
+    width: 400px;
+    position: absolute;
+    top: 58%;
+    left: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#profile .inner .info div>*{
+    display: flex;
+    /* gap: 50px; */
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    opacity: 0;
+}
+#profile .inner .info div h3,
+#profile .inner .info div p{
+    opacity: 0;
+}
+#profile .inner .edu{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    right: -50px;
+}
+#profile .inner .edu h2{
+    font-size: 24px;
+    position: absolute;
+    top: -40px;
+    left: -5px;
+}
+#profile .inner .edu div,
+#profile .inner .edu div h3,
+#profile .inner .edu div p{
+    opacity: 0;
+}
+.p_imgbox{
+    position: absolute;
+    left: 50%;
+    margin-left: -450px;
+    top: 50%;
+    margin-top: -250px;
+    transform: translate(-50%,-50%);
+    opacity: 1;
+}
+/* sec07 */
+#sec07{
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+#sec07 span.circle{
+    display: block;
+    width: 600px;
+    height: 600px;
+    background: url("../images/mManagement_bg.jpg")no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#sec07 .txtbox{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#sec07 .txtbox h4{
+    color: rgba(255,255,255,0.5);
+}
+#sec07 .txtbox h3{
+    font-size: 50px;
+    margin: 10px;
+}
+#sec07 .txtbox h4,
+#sec07 .txtbox h3,
+#sec07 .txtbox p{
+    opacity: 0;
+}
+#sec08{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#sec08 .video_wrap video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#work{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #333;
+    flex-direction: column;
+}
+#work .title{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 30vh;
+    line-height: 0.8;
+}
+#work .title .left{
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#work .title .right{
+    font-size: 150px;
+}
+/* 작품리스트 */
+#work .list{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#work .list li{
+    width: 45%;
+    height: 570px;
+    margin-top: 150px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+}
+#work .list li:nth-child(2n){
+    margin-top: 0;
+}
+#work .list li a{
+    display: block;
+    width: 100%;
+}
+#work .list li a .imgbox{
+    position: relative;
+    border-radius: 24px;
+}
+#work .list li a:hover .imgbox::before{
+    opacity: 1;
+}
+#work .list li a:hover .imgbox::after{
+    opacity: 1;
+    height: 100px;
+}
+#work .list li a .imgbox::after{
+    content: 'MORE +';
+    color: #333;
+    font-weight: bold;
+    width: 100px;
+    height: 0px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 40px;
+    margin-left: 20px;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+#work .list li a .imgbox::before{
+    content: '';
+    width: 150px;
+    height: 150px;
+    background: #fff url("../images/circle.png")no-repeat center;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: btn_ani 5s linear infinite;
+    transition: all 0.5s ease-in-out;
+}
+@keyframes btn_ani {
+    0%{transform:translate(-50%,-50%) rotate(0deg);}
+    0%{transform:translate(-50%,-50%) rotate(360deg);}
+}
+#work .list li a img{
+    width: 100%;
+    height: 450px;
+}
+#work .list li a .txtbox{
+    padding: 20px;
+    color: #333;
+}
+#work .list li a .txtbox h4{
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+#work .list li a .txtbox p{
+    color: #999;
+}
+#work .list li a .txtbox .info{
+    display: flex;
+    justify-content: space-between;
+}
+/* simply scroll 작품 화면 section */
+.simple{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list{
+    float: left;
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li{
+    border: 1px solid red;
+    width: 450px;
+}
+.simply-scroll .simply-scroll-clip .simply-scroll-list li img{
+    width: 100%;
+    height: 100%;
+}
+/* section10 */
+.section10{
+    width: 100%;
+    position: relative;
+    background: #000;
+}
+.section10 .txt_loop{
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    overflow: hidden;
+}
+.section10 .txt_loop ul{
+    width: 100%;
+    display: flex;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+    font-size: 100px;
+    letter-spacing: -2px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-weight: 700;
+    /* transform: rotate(15deg); */
+}
+.section10 .txt_loop ul li{
+    padding: 0 30px;
+    animation: text-ani 10s linear infinite;
+}
+@keyframes text-ani {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+.section10 .textwrap{
+    width: 100%;
+    text-align: center;
+}
+.section10 .textwrap h2{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+.section10 .textwrap .title{
+    font-size: 100px;
+    /* transform: translate(-50%,-50%); */
+}
+.section10 .textwrap .tool{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.section10 .textwrap .tool li{
+    opacity: 0;
+}
+.section10 .textwrap .tool li h3{
+    font-size: 32px;
+}
+.section10 .textwrap .tool li span{
+    color: #f5a301;
+}
+
+/* section 11 */
+.section11{
+    width: 100%;
+    height: 150vh;
+    background: #000;
+    overflow: hidden; 
+    justify-content: flex-start;
+    padding-left:60px;
+    box-sizing: border-box;
+}
+.section11 .txtbox{
+    font-size: 80px;
+    line-height: 1.2;
+}
+/* clip은 반드시 text는 inline tag로 묶어야한다!!  */
+.section11 .txtbox .mask span{
+    -webkit-text-fill-color: rgba(255,255,255,0.3);
+    /* 배경클립을 텍스트로 제한하여 마스크처리 */
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#f5a301,#f5a301);
+    background-size: 0% 100%;
+}
+.section11 .txtbox .mask .span2{
+    -webkit-text-fill-color: rgba(255,255,255,0.3);
+    /* 배경클립을 텍스트로 제한하여 마스크처리 */
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#fff,#fff);
+    background-size: 0% 100%;
+}
+/* footer 영역 */
+footer{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    position: relative;
+}
+footer .textwrap{
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    left: 0;
+    padding: 0 70px;
+    box-sizing: border-box;
+    font-size: 150px;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+footer .textwrap .tit1{
+    margin-top: -30px;
+    font-size: 24px;
+}
+footer .textwrap a{
+    color: #fff;
+}
+footer .textwrap h2{
+    margin-bottom: 50px;
+}
+footer .textwrap .tit2{
+    font-size: 80px;
+}
+footer .textwrap .tit3{
+    margin-top: 30px;
+}
+footer .copy{
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    left: 0;
+    padding: 0 70px;
+    box-sizing: border-box;
+    font-size: 24px;
+    letter-spacing: -2px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .sns{display: flex; gap: 30px;}
+footer .sns li a{color: #fff;}
+footer .textwrap svg{margin-right: 50px;}
+/* 작품 섹션 */
+section{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+section .wrap{
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    color: #000;
+    overflow: hidden;
+}
+.section01 .wrap{background: antiquewhite;}
+.section02 .wrap{background: burlywood;}
+.section03 .wrap{background: chocolate;}
+
+.wrap ul.contents{
+    display: flex;
+    gap: 50px;
+}
+.wrap ul.contents li{
+    width: 40%;
+}
+.wrap ul.contents li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.wrap ul.contents li a .imgbox{
+    width: 100%;
+    height: 100%;
+}
+.wrap ul.contents li a .imgbox img{
+    width: 100%;
+    height: 100%;
+}
+.wrap ul.contents li.right .infomation .tit{
+    margin-top: 150px;
+    box-sizing: border-box;
+}
+.wrap ul.contents li.right .infomation .tit h3{
+    font-size: 42px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+.wrap ul.contents li.right .infomation .txtbox p{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.wrap ul.contents li.right .infomation .txtbox .btn{
+    width: 260px;
+    padding: 16px 36px;
+    border-radius: 16px;
+    background: #FEC80E;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+.wrap ul.contents li.right .infomation .info p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: #333;
+    position: relative;
+}
+.wrap ul.contents li.right .infomation .info span::before{
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #333;
+    position: absolute;
+    left: 65px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.wrap ul.contents li.right .infomation .info2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.wrap ul.contents li.right .infomation .info2 div{
+    text-align: center;
+    width: 260px;
+    padding: 16px 36px;
+    border-radius: 16px;
+    border: 1px solid #FEC80E;
+    background: #FFF;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}

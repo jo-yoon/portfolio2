@@ -1,0 +1,31 @@
+웹브라우저 스크롤바에 반응하면서 애니메이션 설정
+1. gsap -> plugin
+    * ScrollTrigger를 gsap에 등록
+    gsap.registerPlugin(ScrollTrigger);
+    * sec02 애니메이션
+    * 애니메이션할 요소선택과 스크롤바의 위치와 요소의 위치를 정해줌
+    gsap.timeline({
+        // 스크롤바에 따른 애니메이션 설정
+        scrollTrigger: {
+            // 애니메이션 할때 부드럽게 처리
+            scrub: 3,
+            // 애니메이션 대상(요소선택)
+            trigger: "#sec02 ul",
+            // 애니메이션 시작부분
+            // 앞- 요소의 시작위치, 뒤- 스크롤바의 시작위치
+            start: "20% 80%",
+            // 애니메이션 끝부분
+            // 앞- 요소의 끝위치, 뒤- 스크롤바의 끝위치
+            end: "100% 100%",
+            // 요소의 시작 끝위치, 스크롤바의 시작 끝위치
+            // markers:true,
+        },
+    })
+    // .to('',{},지연시간)
+    .to('#sec02 li:nth-child(1)',{y:-500,duration:1,ease:'ease-in-out'},0.4)
+    .to('#sec02 li:nth-child(2)',{y:-500,duration:1,ease:'ease-in-out'},0.6)
+    .to('#sec02 li:nth-child(3)',{y:-500,duration:1,ease:'ease-in-out'},0.8)
+    .to('#sec02 li:nth-child(4)',{y:-500,duration:1,ease:'ease-in-out'},1)
+
+
+2. 통프로그램 개발
